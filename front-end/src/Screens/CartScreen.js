@@ -14,12 +14,16 @@ const CartScreen = () => {
   } = state;
 
   const updateAddToCart = async (item, quantity) => {
-    const { data } = await axios.get(`/api/products/${item._id}`);
-    if (data.countInStock < quantity) {
-      window.alert("Sorry. Product is out of stock");
-      return;
+    try {
+      const { data } = await axios.get(`/api/products/${item._id}`);
+      if (data.countInStock < quantity) {
+        window.alert("Sorry. Product is out of stock");
+        return;
+      }
+      ctxDispatch({ type: "ADD_TO_CART", payload: { ...item, quantity } });
+    } catch (e) {
+      console.log(e.response);
     }
-    ctxDispatch({ type: "ADD_TO_CART", payload: { ...item, quantity } });
   };
   const handleRemoveCartItem = (item) => {
     console.log("click", item);
