@@ -53,7 +53,7 @@ const ShippingAddressScreen = () => {
       <Helmet>
         <title>Shipping Address</title>
       </Helmet>
-      <Checkout step1 step2/>
+      <Checkout step1 step2 />
       <div className="container small-container">
         <h1 className="my-3">Shipping Address</h1>
         <Form onSubmit={handleSubmit}>
