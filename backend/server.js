@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import seedRouters from "./routes/seedRoutes.js";
 import productRouters from "./routes/ProductRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 
 dotenv.config();
 
@@ -30,7 +31,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/seed", seedRouters);
 app.use("/api/products", productRouters);
 app.use("/api/user", userRouter);
-console.log(userRouter);
+app.use("/api/orders", orderRouter);
+console.log(orderRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

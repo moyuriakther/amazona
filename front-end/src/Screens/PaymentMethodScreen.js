@@ -26,7 +26,7 @@ const PaymentMethodScreen = () => {
       payload: paymentMethodName,
     });
     localStorage.setItem("paymentMethod", paymentMethodName);
-    navigate("/placeholder");
+    navigate("/placeorder");
   };
   return (
     <div>
