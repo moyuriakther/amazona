@@ -40,7 +40,6 @@ const HomeScreens = () => {
     };
     fetchData();
   }, []);
-  console.log(error)
   return (
     <div>
       <Helmet>
