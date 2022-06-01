@@ -53,7 +53,7 @@ const UserProfileScreen = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       toast.success("User updated successfully");
     } catch (error) {
-        console.log(error);
+      console.log(error);
       dispatch({
         type: "FETCH_FAIL",
       });
